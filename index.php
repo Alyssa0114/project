@@ -19,6 +19,7 @@ $pagePath = "index";
 $specie = new Specie;
 $animalModel = new Animal;
 
+//qsddsqdssdq
 // AJOUT TEST
 // Methode
 $findSpecies = $specie->findAll();
