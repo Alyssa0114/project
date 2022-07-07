@@ -1,0 +1,181 @@
+<?php if(Session::isConnected()&& $_SESSION['auth']['role']):; ?>
+
+
+<div class="container-grid">
+    <div class="admin-border">
+        <div class="big-title-admin">
+            <h2>Articles</h2>
+        </div>
+        <h3 class="title-admin">Nombre d'articles : <?= $countPosts ?> articles</p></h3>
+
+    </div>
+
+    <div class="admin-border">
+        <div class="big-title-admin">
+            <h2>Contact</h2>
+        </div>
+        <h3 class="title-admin">Total : <?= $counts ?> messages</h3>
+    </div>
+
+    <div class="admin-border">
+        <div class="big-title-admin">
+            <h2>Utilisateurs</h2>
+        </div>
+
+        <table>
+            <thead>
+                <tr class="title-admin">
+                    <th>Id</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Rôle</th>
+                    <th>Suppression</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td>
+                            <?= htmlspecialchars($user['id']); ?>
+                        </td>
+                        <td>
+                            <?= htmlspecialchars($user['firstname']); ?>
+                        </td>
+                        <td>
+                            <?= htmlspecialchars($user['lastname']); ?>
+                        </td>
+                        <td>
+                            <?= htmlspecialchars($user['mail']); ?>
+                        </td>
+                        <td>
+                            <?= htmlspecialchars($user['isAdmin']); ?>
+                        </td>
+                        <td>
+                            <a href="delete-user.php?id=<?=intval($user['id']); ?>"class="btn-delete">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>        
+            </tbody>
+        </table>
+    </div>
+
+    <div class="admin-border">
+        <div class="big-title-admin">
+            <h2>Animaux</h2>
+        </div>
+            <h3 class="title-admin">Total : <?= $countAnimals ?> animaux</h3>
+    </div>
+
+    <div class="admin-border">
+        <div class="big-title-admin">
+            <h2 class="title-admin">Espèces & Races</h2>
+        </div>
+        <table>
+            <thead>
+                <tr class="title-admin">
+                    <th>Total d'espèces :</th>
+                    <th>Total de races :</th>
+                </tr>
+            </thead>    
+                <tr>
+                    <td><?= $countSpecies ?></td>
+                    <td><?= $countRaces ?></td>
+                </tr>
+        </table>            
+        <table>
+            <thead>
+                <tr class="title-admin">
+                    <th>Suppression d'une espèce</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($species as $specie) : ?>
+                    <tr>
+                        <td>
+                            <?= htmlspecialchars($specie['name']); ?>
+                        </td>
+                        <td>
+                            <a href="delete-specie.php?id=<?=intval($specie['id']); ?>"class="btn-delete">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>  
+            </tbody>
+        </table>      
+        <table>
+            <thead>
+                <tr>
+                    <th class="title-admin">Suppression d'une race</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($races as $element) : ?>
+                    <tr>
+                        <td>
+                            <?= htmlspecialchars($element['race']); ?>
+                        </td>
+                        <td>
+                            <a href="delete-race.php?id=<?=intval($element['id']); ?>"class="btn-delete">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>  
+            </tbody>
+        </table>        
+    </div> 
+    
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Ajout d'une espèce</h2>
+            </div>
+            <?php foreach($species as $element):?>
+                <div>
+                    <?= htmlspecialchars($element['name']); ?>
+                </div>
+                <?php endforeach ?>
+
+                <form method="POST" action="index.php">
+                <label for="name">
+                    <span>Ajouter une espèce</span>
+                    <input type="text" name="name" id="name" value=""/>
+                </label>
+                <input type="submit" value="ajouter">
+                </form>
+        </div>   
+        
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Ajout d'une race</h2>
+            </div>
+            <?php foreach($races as $element):?>
+                <div>
+                    <?= htmlspecialchars($element['race']); ?>
+                </div>
+                <?php endforeach ?>
+
+                <form method="POST" action="index.php">
+                <label for="name">
+                    <span>Ajouter une race</span>
+                    <input type="text" name="name" id="name" value=""/>
+                </label>
+                <input type="submit" value="ajouter">
+                </form>
+        </div> 
+
+
+
+
+
+            
+
+    
+
+</div>
+    <?php elseif (Session::isConnected()&& !$_SESSION['auth']['role']) : ?>
+        <?=$_SESSION['error'] = 'Restricted'; ?>
+<?php endif ; ?>
+
+
+

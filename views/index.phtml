@@ -1,0 +1,53 @@
+<h2>Nous avons <?= $countAnimals ?> animaux à l'adoption !</h2>
+
+<div class="animals-fiche">
+
+
+<table>
+    <?php foreach ($animals as $animal) : ?>
+        <thead>
+            <tr class="title-animals">
+                <th>Nom</th>
+                <th>Sexe</th>
+                <th>Refuge</th>
+                <th>Date de Naissance</th>
+                <th></th>
+            </tr>
+        </thead>
+            <tbody>
+        
+                <tr class="content-animals">
+                    <td class="test1">
+                        <?= htmlspecialchars($animal['name']); ?>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($animal['sex']); ?>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($animal['refuge']); ?>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($animal['date_of_birth']); ?>
+                    </td>
+                    <td>
+                        <img class="animals-img" src="<?= strtok($animal["files"], ',') ?>" alt="images" />
+                    </td>
+                </tr>
+    <?php endforeach ?>
+        </tbody>
+
+
+</table>
+
+
+
+            
+            
+            
+            
+
+            
+        
+    
+    
+</div>
