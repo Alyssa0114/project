@@ -12,36 +12,37 @@
 
 <body>
         <header>
-                    <nav>
-            <menu>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="animal_abuse.php">Je signale</a></li>
-                <li><a href="contact.php">Nous contacter</a></li>
+            <nav class="client_nav">
+                <menu class="menu_nav">
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="animal_abuse.php">Je signale</a></li>
+                    <li><a href="contact.php">Nous contacter</a></li>
 
-                <li><a href="register.php">Je m'enregistre</a></li>
 
-                <?php if (Session::isConnected() && $_SESSION['auth']) : ?>
+                    <li><a href="register.php">Je m'enregistre</a></li>
 
-                <li><a href="logout.php">Déconnexion</a></li>
+                    <?php if (Session::isConnected() && $_SESSION['auth']) : ?>
 
-                <?php else : ?>
-                <li><a href="login.php">Connexion</a></li>
+                    <li><a href="logout.php">Déconnexion</a></li>
 
-                <?php endif; ?>
-                
-            </menu>
+                    <?php else : ?>
+                    <li><a href="login.php">Connexion</a></li>
+
+                    <?php endif; ?>
+                </menu>
             </nav>
 
             <?php if(Session::isConnected()&& $_SESSION['auth']['role']):; ?>             
-            <nav class="menu-admin">
-            <menu>
-                <li><a href="#">home</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="#">blog</a></li>
-            </menu>
+            
+            <nav class="nav_admin">
+                <menu class="menu_admin">
+                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                    <li><a href="add_animal.php">Ajouter un animal</a></li>
+                    <li><a href="add_post.php">Ajouter un article</a></li>
+                </menu>
             </nav>
             <?php endif; ?>      
+
 
             <?php if (Session::isConnected() && $_SESSION['auth']) : ?>       
             <p class="connected"><?= 'Bonjour ' . $_SESSION['auth']['firstname'] . '  ' . $_SESSION['auth']['lastname']; ?></p>

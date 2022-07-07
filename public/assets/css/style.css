@@ -64,24 +64,24 @@ main, footer {
                               HEADER
   ********************************************************/
 
-  nav {
+.client_nav nav {
     margin : 50px auto;
-  }
+}
   
-  menu {
+menu {
     border-radius : 3px;
-  }
+}
   
-  menu:after , menu:before {
+menu:after , menu:before {
     display : block;
     content : ' ';
-  }
+}
   
-  menu:after {
+menu:after {
     clear : both;
-  }
+}
   
-  li {
+.menu_nav li {
     list-style-type : none;
     background      : linear-gradient(rgba(236, 141, 32, 0.4) 85%, rgba(180, 89, 15, 0.671) 100%);
   
@@ -90,17 +90,17 @@ main, footer {
     padding : 3px 10px;
     border-top    : 1px solid rgba(189, 108, 16, 0.5);
     border-bottom : 1px solid rgba(230, 132, 20, 0.2); 
-  }
+}
   
-  li:first-child {
+.menu_nav li:first-child {
     border-radius : 5px 0 0 5px;
-  }
+}
   
-  li:last-child {
+.menu_nav li:last-child {
     border-radius : 0 5px 5px 0;
-  }
+}
   
-  a {
+.menu_nav a {
     display : block;
     padding : 10px 13px;
     font-size : 26px;
@@ -110,17 +110,17 @@ main, footer {
     top   : 0;
     color : black;			
     transition : all .4s;
-  }
+}
   
-  li:hover a {
+.menu_nav li:hover a {
     top   : -20px;
     color : #b96312;
     background-color: #fff;
     box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
     transition : all .4s;
-  }
+}
   
-  li a:after {
+.menu_nav li a:after {
     display  : block;
     content  : '';
     position : absolute;
@@ -130,33 +130,75 @@ main, footer {
     border-color : transparent;
     border-width : 5px 5px 0 5px;
     transition   : all .4s;
-  }
+}
   
-  li:hover a:after {
+.menu_nav li:hover a:after {
     border-color : rgb(0, 0, 0) transparent transparent transparent;
     transition   : all .4s;
-  }
+}
   
-  /*************************************/
+/**** Menu Admin ****/
+
+.menu_admin li {
+    list-style-type : none;
+    background      : linear-gradient(rgba(236, 141, 32, 0.4) 85%, rgba(180, 89, 15, 0.671) 100%);
   
- 
+    float   : left;
+    cursor  : pointer;
+    padding : 3px 10px;
+    border-top    : 1px solid rgba(189, 108, 16, 0.5);
+    border-bottom : 1px solid rgba(230, 132, 20, 0.2); 
+}
   
-  .menu-admin a {
-    font-family : georgia;
-    font-size   : 14px;
-    font-style  : italic;
-    text-transform : capitalize;
-  }
+.menu_admin li:first-child {
+    border-radius : 5px 0 0 5px;
+}
   
-  .menu-admin li {
-    border-right  : 1px solid rgba(189, 108, 16, 0.5);
-    border-left   : 1px solid rgba(230, 132, 20, 0.2); 
-  }
+.menu_admin li:last-child {
+    border-radius : 0 5px 5px 0;
+}
   
+.menu_admin a {
+    display : block;
+    padding : 10px 13px;
+    font-size : 26px;
+    text-decoration : none;
+    border-radius   : 5px;
+    position        : relative;
+    top   : 0;
+    color : black;			
+    transition : all .4s;
+}
   
-  a.fun {
-    display : none;
-  }
+.menu_admin li:hover a {
+    top   : -20px;
+    color : #b96312;
+    background-color: #fff;
+    box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
+    transition : all .4s;
+}
+  
+.menu_admin li a:after {
+    display  : block;
+    content  : '';
+    position : absolute;
+    top  : 100%;
+    left : 42%;
+    border-style : solid;
+    border-color : transparent;
+    border-width : 5px 5px 0 5px;
+    transition   : all .4s;
+}
+  
+.menu_admin li:hover a:after {
+    border-color : rgb(0, 0, 0) transparent transparent transparent;
+    transition   : all .4s;
+}
+
+
+
+/*************************************/
+
   
 .connected {
     color: black;
@@ -288,6 +330,40 @@ nav ul li a {
 .content-animals {
     text-align: center;
 }
+
+/**** BANNER IMG ****/
+.banner_image {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.banner_image img {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+    border: 3px solid black;
+
+}
+
+.banner_content {
+    position:absolute;
+    margin-top: -45%;
+    margin-left: 4%;
+}
+.banner_content h1 {
+    color: #111;
+    font-size: 50px;
+}
+
+.banner_content p {
+    text-align: center;
+}
+
+.banner_content p > a {
+    text-decoration: none;
+    color:#b96312;
+}
+
 
 /**** PAGE : ADMIN PANEL ****/
 
