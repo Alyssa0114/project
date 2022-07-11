@@ -9,9 +9,9 @@
     <link rel="shortcut icon" type="image/ico" href="./public/assets/images/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
-
-<!-- JE SUIS UN COMMENTAIRE -->
 <body>
+
+
         <header>
             <nav class="client_nav">
                 <menu class="menu_nav">
@@ -30,16 +30,14 @@
                     <li><a href="login.php">Connexion</a></li>
 
                     <?php endif; ?>
-                </menu>
-            </nav>
 
             <?php if(Session::isConnected()&& $_SESSION['auth']['role']):; ?>             
 
-            <nav class="nav_admin">
-                <menu class="menu_admin">
                     <li><a href="dashboard.php">Tableau de bord</a></li>
                     <li><a href="add_animal.php">Ajouter un animal</a></li>
                     <li><a href="add_post.php">Ajouter un article</a></li>
+
+                    
                 </menu>
             </nav>
             <?php endif; ?>      
@@ -49,7 +47,9 @@
             <p class="connected"><?= 'Bonjour ' . $_SESSION['auth']['firstname'] . '  ' . $_SESSION['auth']['lastname']; ?></p>
             <?php endif; ?>
 
-        </header>         
+        </header>  
+        
+        
         <main>
             <?= $pageContent ?>
         </main>
