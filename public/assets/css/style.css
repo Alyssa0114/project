@@ -169,6 +169,7 @@ menu:after {
     max-height: 40%;
     align-items: center;
     border-radius: 0.6rem;
+    margin-top: 5px;
 }
 
 .title-animals {
