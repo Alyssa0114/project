@@ -1,64 +1,36 @@
 <div class="banner_image">
-    
-        <img class="banner_img_dog" src="./public/assets/images/dobermann_test2.jpg" alt="dobermann" >
-        <div class="banner_content">
-            <h1>Nos Amis Les Animaux</h1>
-                <h2>Aucune raison ne justifie l'abandon</h2>
-                    <p>Découvrez le film de sensibilisation de la Société Protectrice des Animaux <a href="https://lp.la-spa.fr/stopabandon/?reserved_code_media=W22PG012F&utm_medium=mainbloc&utm_campaign=Abandon22&utm_source=site">juste ici</a></p>
-        </div>
+    <img class="banner_img_dog" src="./public/assets/images/dobermann_test2.jpg" alt="dobermann">
+    <div class="banner_content">
+        <h1>Nos Amis Les Animaux</h1>
+        <h2>Aucune raison ne justifie l'abandon</h2>
+        <p>Découvrez le film de sensibilisation de la Société Protectrice des Animaux <a href="https://lp.la-spa.fr/stopabandon/?reserved_code_media=W22PG012F&utm_medium=mainbloc&utm_campaign=Abandon22&utm_source=site">juste ici</a></p>
+    </div>
 </div>
-
-
-
-
-
-
-<h2>Nous avons <?= $countAnimals ?> animaux à l'adoption !</h2>
-
-
 <section>
+    <h2>Nous avons <?= $countAnimals ?> animaux à l'adoption !</h2>
     <div class="container-grid-animal">
-    <?php foreach ($animals as $animal) : ?>
-        <div>
+        <?php foreach ($animals as $animal) : ?>
             <article>
                 <div>
-                    <div>
-                        
-                            <h3 class="title-animals"><?= htmlspecialchars($animal['name']); ?></h3>
-                    </div>            
-                    <div>           
-                            <img class="animals-img" src="<?= strtok($animal["files"], ',') ?>" alt="images" />
-    
-                    </div>             
-                    <div>           
-                            <p class="content-animals">Nom : <?= htmlspecialchars($animal['name']); ?></p>
-                    </div>             
-                    <div>           
-                            <p class="content-animals">Sexe : <?= htmlspecialchars($animal['sex']); ?></p>
-                    </div>             
-                    <div>            
-                            <p class="content-animals">Refuge : <?= htmlspecialchars($animal['refuge']); ?></p>
-                    </div>            
-                    <div>   
-                        <p class="content-animals">Date de naissance : <?= htmlspecialchars($animal['date_of_birth']); ?></p>     
-                             
-                    </div>      
+                    <h3 class="title-animals"><?= htmlspecialchars($animal['name']); ?></h3>
+                </div>
+                <div class="animals-img-container">
+                    <img class="animals-img" src="<?= strtok($animal["files"], ',') ?>" alt="images" />
+                </div>
+                <div>
+                    <p class="content-animals">Nom : <?= htmlspecialchars($animal['name']); ?></p>
+                </div>
+                <div>
+                    <p class="content-animals">Sexe : <?= htmlspecialchars($animal['sex']); ?></p>
+                </div>
+                <div>
+                    <p class="content-animals">Refuge : <?= htmlspecialchars($animal['refuge']); ?></p>
+                </div>
+                <div>
+                    <p class="content-animals">Date de naissance : <?= htmlspecialchars($animal['date_of_birth']); ?></p>
                 </div>
             </article>
-        </div>
-    <?php endforeach ?>  
+        <?php endforeach ?>
     </div>
 </section>
-
-
-
-            
-            
-            
-            
-
-            
-        
-    
-    
 </div>

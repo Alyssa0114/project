@@ -9,65 +9,65 @@
     <link rel="shortcut icon" type="image/ico" href="./public/assets/images/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
+
 <body>
 
+    <header>
+        <nav class="client_nav">
+            <menu class="menu_nav">
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="animal_abuse.php">Je signale</a></li>
+                <li><a href="contact.php">Nous contacter</a></li>
 
-        <header>
-            <nav class="client_nav">
-                <menu class="menu_nav">
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="animal_abuse.php">Je signale</a></li>
-                    <li><a href="contact.php">Nous contacter</a></li>
 
+                <li><a href="register.php">Je m'enregistre</a></li>
 
-                    <li><a href="register.php">Je m'enregistre</a></li>
-
-                    <?php if (Session::isConnected() && $_SESSION['auth']) : ?>
+                <?php if (Session::isConnected() && $_SESSION['auth']) : ?>
 
                     <li><a href="logout.php">Déconnexion</a></li>
 
-                    <?php else : ?>
+                <?php else : ?>
                     <li><a href="login.php">Connexion</a></li>
 
-                    <?php endif; ?>
+                <?php endif; ?>
 
-            <?php if(Session::isConnected()&& $_SESSION['auth']['role']):; ?>             
+                <?php if (Session::isConnected() && $_SESSION['auth']['role']) :; ?>
 
                     <li><a href="dashboard.php">Tableau de bord</a></li>
                     <li><a href="add_animal.php">Ajouter un animal</a></li>
                     <li><a href="add_post.php">Ajouter un article</a></li>
 
-                    
-                </menu>
-            </nav>
-            <?php endif; ?>      
+
+            </menu>
+        </nav>
+    <?php endif; ?>
 
 
-            <?php if (Session::isConnected() && $_SESSION['auth']) : ?>       
-            <p class="connected"><?= 'Bonjour ' . $_SESSION['auth']['firstname'] . '  ' . $_SESSION['auth']['lastname']; ?></p>
-            <?php endif; ?>
+    <?php if (Session::isConnected() && $_SESSION['auth']) : ?>
+        <p class="connected"><?= 'Bonjour ' . $_SESSION['auth']['firstname'] . '  ' . $_SESSION['auth']['lastname']; ?></p>
+    <?php endif; ?>
 
-        </header>  
-        
-        
-        <main>
-            <?= $pageContent ?>
-        </main>
-        <footer>
-            <div class="footer-content">
-                <h3>Krystel Developer</h3>
+    </header>
 
-                    <p>Thiebaut Krystel - Copyright 2022</p>
 
-                    <ul class="socials">
-                        <li><a href="https://www.facebook.com/spaofficiel/" target="blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://twitter.com/SPA_Officiel" target="blank" title="twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/la_spa/?hl=fr" target="blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCHIbj4gZgIXThXRqeCMStrg" target="blank" title="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
-                        <li><a href="https://www.linkedin.com/company/la-spa/?originalSubdomain=fr" target="blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    </ul>
-            </div>
-        </footer>
+    <main>
+        <?= $pageContent ?>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <h3>Krystel Developer</h3>
+
+            <p>Thiebaut Krystel - Copyright 2022</p>
+
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/spaofficiel/" target="blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/SPA_Officiel" target="blank" title="twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/la_spa/?hl=fr" target="blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCHIbj4gZgIXThXRqeCMStrg" target="blank" title="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/la-spa/?originalSubdomain=fr" target="blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
     <script src="./public/assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>

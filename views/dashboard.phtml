@@ -6,7 +6,39 @@
         <div class="big-title-admin">
             <h2>Articles</h2>
         </div>
-        <h3 class="title-admin">Nombre d'articles : <?= $countPosts ?> articles</p></h3>
+        <h3 class="title-admin">Total : <?= $countPosts ?> articles</p></h3>
+        <table>
+                <thead>
+                    <tr class="title-admin">
+                        <th>Id</th>
+                        <th>Id utilisateur</th>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th>Date de création</th>
+                    </tr>
+                </thead>
+            <tbody>
+                    <?php foreach ($posts as $post) : ?>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($post['id']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($post['user_id']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($post['title']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($post['content']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($post['created_at']); ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>        
+            </tbody>
+        </table>
 
     </div>
 
@@ -14,7 +46,48 @@
         <div class="big-title-admin">
             <h2>Contact</h2>
         </div>
+            <table>
+                <thead>
+                    <tr class="title-admin">
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Mail</th>
+                        <th>Téléphone</th>
+                        <th>Sujet</th>
+                        <th>Contenu</th>
+                        <th>Date de création</th>
+                    </tr>
+                </thead>
+
         <h3 class="title-admin">Total : <?= $counts ?> messages</h3>
+            <tbody>
+                    <?php foreach ($contacts as $contact) : ?>
+                            <tr>
+                                <td>
+                                    <?= htmlspecialchars($contact['id']); ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($contact['name']); ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($contact['mail']); ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($contact['phone']); ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($contact['subject']); ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($contact['content']); ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($contact['created_at']); ?>
+                                </td>
+                            </tr>
+                    <?php endforeach; ?>        
+            </tbody>
+        </table>
     </div>
 
     <div class="admin-border">
@@ -70,8 +143,9 @@
 
     <div class="admin-border">
         <div class="big-title-admin">
-            <h2 class="title-admin">Espèces & Races</h2>
+            <h2>Espèces & Races</h2>
         </div>
+
         <table>
             <thead>
                 <tr class="title-admin">
@@ -83,7 +157,8 @@
                     <td><?= $countSpecies ?></td>
                     <td><?= $countRaces ?></td>
                 </tr>
-        </table>            
+        </table>   
+
         <table>
             <thead>
                 <tr class="title-admin">
@@ -103,7 +178,8 @@
                     </tr>
                 <?php endforeach; ?>  
             </tbody>
-        </table>      
+        </table>    
+
         <table>
             <thead>
                 <tr>
@@ -136,7 +212,7 @@
                 </div>
                 <?php endforeach ?>
 
-                <form method="POST" action="index.php">
+                <form method="POST" action="dashboard.php">
                 <label for="name">
                     <span>Ajouter une espèce</span>
                     <input type="text" name="name" id="name" value=""/>
@@ -155,7 +231,7 @@
                 </div>
                 <?php endforeach ?>
 
-                <form method="POST" action="index.php">
+                <form method="POST" action="dashboard.php">
                 <label for="name">
                     <span>Ajouter une race</span>
                     <input type="text" name="name" id="name" value=""/>

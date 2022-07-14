@@ -3,64 +3,65 @@
 /**********************Universel****************************/
 * {
     box-sizing: border-box;
-    margin: auto;
 }
-  
+
 html {
     font-size: 62.5%;
 }
-  
+
 body {
     background-color: #f2f2f2;
     color: #666;
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
+    margin: 0;
 }
-  
+
 .container {
     margin: 0 auto;
     max-width: 1100px;
 }
-  
+
 img {
     max-width: 100%;
 }
-  
+
 h1, h2, h3, h4 {
     color: black;
     font-family: 'Finlandica', sans-serif;
     text-align: center;
 }
-  
+
 h1 {
     font-size: 3.2rem;
 }
-  
+
 h2 {
     font-size: 2.5rem;
 }
-  
+
 h3 {
     font-size: 2rem;
     font-weight: normal;
 }
-  
+
 main, footer {
     line-height: 1.8;
 }
-  
+
 .flex {
     display: flex;
 }
 
 .right {
-    float:right;
+    float: right;
 }
-  
+
 .left {
-    float:left;
+    float: left;
 }
-  /********************************************************
+
+/********************************************************
                               HEADER
   ********************************************************/
 
@@ -70,78 +71,80 @@ header nav {
 }
 
 .client_nav nav {
-    margin : 50px auto;
+    margin: 50px auto;
 }
-  
+
 menu {
-    border-radius : 3px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 3px;
 }
-  
-menu:after , menu:before {
-    display : block;
-    content : ' ';
+
+menu:after, menu:before {
+    display: block;
+    content: ' ';
 }
-  
+
 menu:after {
-    clear : both;
+    clear: both;
 }
-  
+
 .menu_nav li {
-    list-style-type : none;
-    background      : linear-gradient(rgba(236, 141, 32, 0.4) 85%, rgba(180, 89, 15, 0.671) 100%);
-  
-    float   : left;
-    cursor  : pointer;
-    padding : 3px 10px;
-    border-top    : 1px solid rgba(189, 108, 16, 0.5);
-    border-bottom : 1px solid rgba(230, 132, 20, 0.2); 
+    list-style-type: none;
+    background: linear-gradient(rgba(236, 141, 32, 0.4) 85%, rgba(180, 89, 15, 0.671) 100%);
+
+    float: left;
+    cursor: pointer;
+    padding: 3px 10px;
+    border-top: 1px solid rgba(189, 108, 16, 0.5);
+    border-bottom: 1px solid rgba(230, 132, 20, 0.2);
 }
-  
+
 .menu_nav li:first-child {
-    border-radius : 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
 }
-  
+
 .menu_nav li:last-child {
-    border-radius : 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
 }
-  
+
 .menu_nav a {
-    display : block;
-    padding : 10px 13px;
-    font-size : 26px;
-    text-decoration : none;
-    border-radius   : 5px;
-    position        : relative;
-    top   : 0;
-    color : black;			
-    transition : all .4s;
+    display: block;
+    padding: 10px 13px;
+    font-size: 26px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    color: black;
+    transition: all .4s;
 }
-  
+
 .menu_nav li:hover a {
-    top   : -20px;
-    color : #b96312;
+    top: -20px;
+    color: #b96312;
     background-color: #fff;
-    box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
-    transition : all .4s;
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
+    transition: all .4s;
 }
-  
+
 .menu_nav li a:after {
-    display  : block;
-    content  : '';
-    position : absolute;
-    top  : 100%;
-    left : 42%;
-    border-style : solid;
-    border-color : transparent;
-    border-width : 5px 5px 0 5px;
-    transition   : all .4s;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 42%;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 5px 5px 0 5px;
+    transition: all .4s;
 }
-  
+
 .menu_nav li:hover a:after {
-    border-color : rgb(0, 0, 0) transparent transparent transparent;
-    transition   : all .4s;
+    border-color: rgb(0, 0, 0) transparent transparent transparent;
+    transition: all .4s;
 }
-  
+
 
 /*************************************/
 
@@ -149,14 +152,14 @@ menu:after {
     color: black;
     font-family: 'Finlandica', sans-serif;
     text-align: left;
-    display : block;
-    padding : 10px 13px;
-    font-size : 26px;
-    text-decoration : none;
-    border-radius : 5px;
-    position : relative;
-    top : 0;	
-    transition : all .4s;
+    display: block;
+    padding: 10px 13px;
+    font-size: 26px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    transition: all .4s;
 }
 
 
@@ -164,9 +167,13 @@ menu:after {
 
 /****ACCUEIL****/
 
+.animals-img-container {
+    display: flex;
+    justify-content: center;
+}
+
 .animals-img {
-    max-width: 40%;
-    max-height: 40%;
+    max-height: 300px;
     align-items: center;
     border-radius: 0.6rem;
     margin-top: 5px;
@@ -177,21 +184,20 @@ menu:after {
     background-color: #df6d14;
     border-radius: 0.6rem;
 }
+
 .content-animals {
     text-align: center;
     color: black;
     font-family: 'Finlandica', sans-serif;
 }
 
-
 .container-grid-animal {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 10px 10px; 
-    grid-template-areas: 
-      ". ."
-      ". ."; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /**** BANNER IMG ****/
@@ -200,6 +206,7 @@ menu:after {
     margin: auto;
     position: relative;
 }
+
 .banner_image img {
     width: 100%;
     object-fit: cover;
@@ -208,10 +215,11 @@ menu:after {
 }
 
 .banner_content {
-    position:absolute;
+    position: absolute;
     margin-top: -35%;
     margin-left: 4%;
 }
+
 .banner_content h1 {
     color: #111;
     font-size: 50px;
@@ -221,23 +229,26 @@ menu:after {
     text-align: center;
 }
 
-.banner_content p > a {
+.banner_content p>a {
     text-decoration: none;
-    color:#b96312;
+    color: #b96312;
 }
 
 
 /**** PAGE : ADMIN PANEL ****/
 
 .container-grid {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
-    grid-template-areas: 
-      ". . ."
-      ". . ."
-      ". . ."; 
-  }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". . ."
+        ". . .";
+    gap: 10px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 .flex-container {
 
@@ -277,21 +288,22 @@ menu:after {
 
 .admin-border {
     border-style: solid;
-    border-color: #144F75;
+    border-color: black;
     background: rgba(255, 255, 255, 0.6);
     width: auto;
     text-align: center;
 }
 
 .title-admin {
-    background-color: rgba(52, 73, 94, 0.2);
+    background-color: rgba(230, 132, 20, 0.2);;
     margin-top: 0;
     padding: 0.5rem;
+    font-family: 'Finlandica', sans-serif;
     text-align: center;
 }
 
 .big-title-admin {
-    background-color: #34495e;
+    background-color: rgba(189, 108, 16, 0.5);
     padding: 0.5rem;
     color: #FFF;
     width: 100%;
@@ -330,6 +342,10 @@ menu:after {
     border: 1px solid #fea347;
     border-radius: 9px;
     padding: 5px;
+}
+
+table > thead {
+    align-items: center;
 }
 
 /*****************Articles**********************/
@@ -449,7 +465,7 @@ label {
 
 
 /**********************FOOTER****************************/
-footer{
+footer {
     /* position: absolute; */
     bottom: 0;
     left: 0;
@@ -460,48 +476,56 @@ footer{
     padding-top: 40px;
     color: #fff;
 }
-.footer-content{
+
+.footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
 }
-.footer-content h3{
+
+.footer-content h3 {
     font-size: 2.1rem;
     font-weight: 500;
     text-transform: capitalize;
     line-height: 3rem;
 }
-.footer-content p{
+
+.footer-content p {
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
     color: #cacdd2;
 }
-.socials{
+
+.socials {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
 }
-.socials li{
+
+.socials li {
     margin: 0 10px;
 }
-.socials a{
+
+.socials a {
     text-decoration: none;
     color: #fff;
     border: 1.1px solid white;
     padding: 5px;
     border-radius: 50%;
 }
-.socials a i{
+
+.socials a i {
     font-size: 1.1rem;
     width: 20px;
     transition: color .4s ease;
 }
-.socials a:hover i{
+
+.socials a:hover i {
     color: #fea347;
 }

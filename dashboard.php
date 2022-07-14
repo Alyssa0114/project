@@ -32,6 +32,7 @@ $users = $userModel->findAll();
 
 $contactModel = new Contact;
 $counts = $contactModel->countAll();
+$contacts = $contactModel->findAll();
 
 $specieModel = new Specie;
 $countSpecies = $specieModel->countAll();
@@ -39,6 +40,7 @@ $species = $specieModel->findAll();
 
 $postModel = new Post;
 $countPosts = $postModel->countAll();
+$posts = $postModel->findAll();
 
 $raceModel = new Race;
 $countRaces = $raceModel->countAll();
@@ -49,4 +51,4 @@ $countAnimals = $animalModel->countAll();
 $animals = $animalModel->findAll();
 
 // Rendu de la vue
-render(__DIR__."/views/$pagePath", compact('pageTitle', 'users', 'counts', 'countSpecies', 'species', 'date', 'countPosts', 'countRaces', 'countAnimals', 'animals', 'races'));
+render(__DIR__."/views/$pagePath", compact('pageTitle', 'users', 'counts', 'countSpecies', 'species', 'date', 'countPosts', 'countRaces', 'countAnimals', 'animals', 'races','posts','contacts'));
