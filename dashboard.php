@@ -50,5 +50,31 @@ $animalModel = new Animal;
 $countAnimals = $animalModel->countAll();
 $animals = $animalModel->findAll();
 
+if (isset($_POST['specieData'])) {
+    extract($_POST);
+    $specieModel->insert(
+        [
+            ':name' => $name
+        ]
+    );
+    echo "success !";
+    header('Location: dashboard.php');
+    exit;
+} elseif (isset($_POST['raceData'])) {
+    extract($_POST);
+    $raceModel->insert(
+        [
+            ':race' => $race
+        ]
+    );
+    echo "success !";
+    header('Location: dashboard.php');
+    exit;
+}
+
+
+
+// commentaire
+
 // Rendu de la vue
 render(__DIR__."/views/$pagePath", compact('pageTitle', 'users', 'counts', 'countSpecies', 'species', 'date', 'countPosts', 'countRaces', 'countAnimals', 'animals', 'races','posts','contacts'));
