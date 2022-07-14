@@ -10,16 +10,15 @@ class Race extends Model {
     protected string $table = 'race';
     
     
-     public function insert(array $params): void{
-        try{
-            if($this->findByName($params[':race'])){
-                throw new PDOException("cette race existe déjà.");
-            }else
-            $add=$this->database->prepare(
+    public function insert(array $params): void
+    {
+        try {
+            $add = $this->database->prepare(
                 "INSERT INTO {$this->table} (race) 
-                VALUES (:race)");
+                VALUES (:race)"
+            );
             $add->execute($params);
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
             exit;
         }
