@@ -1,13 +1,14 @@
-<?php if(Session::isConnected()&& $_SESSION['auth']['role']):; ?>
+<?php if (Session::isConnected() && $_SESSION['auth']['role']) :; ?>
 
 
-<div class="container-grid">
-    <div class="admin-border">
-        <div class="big-title-admin">
-            <h2>Articles</h2>
-        </div>
-        <h3 class="title-admin">Total : <?= $countPosts ?> articles</p></h3>
-        <table>
+    <div class="container-grid">
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Articles</h2>
+            </div>
+            <h3 class="title-admin">Total : <?= $countPosts ?> articles</p>
+            </h3>
+            <table>
                 <thead>
                     <tr class="title-admin">
                         <th>Id</th>
@@ -17,7 +18,7 @@
                         <th>Date de création</th>
                     </tr>
                 </thead>
-            <tbody>
+                <tbody>
                     <?php foreach ($posts as $post) : ?>
                         <tr>
                             <td>
@@ -36,16 +37,16 @@
                                 <?= htmlspecialchars($post['created_at']); ?>
                             </td>
                         </tr>
-                    <?php endforeach; ?>        
-            </tbody>
-        </table>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
 
-    </div>
-
-    <div class="admin-border">
-        <div class="big-title-admin">
-            <h2>Contact</h2>
         </div>
+
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Contact</h2>
+            </div>
             <table>
                 <thead>
                     <tr class="title-admin">
@@ -59,199 +60,207 @@
                     </tr>
                 </thead>
 
-        <h3 class="title-admin">Total : <?= $counts ?> messages</h3>
-            <tbody>
+                <h3 class="title-admin">Total : <?= $counts ?> messages</h3>
+                <tbody>
                     <?php foreach ($contacts as $contact) : ?>
-                            <tr>
-                                <td>
-                                    <?= htmlspecialchars($contact['id']); ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($contact['name']); ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($contact['mail']); ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($contact['phone']); ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($contact['subject']); ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($contact['content']); ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($contact['created_at']); ?>
-                                </td>
-                            </tr>
-                    <?php endforeach; ?>        
-            </tbody>
-        </table>
-    </div>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($contact['id']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($contact['name']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($contact['mail']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($contact['phone']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($contact['subject']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($contact['content']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($contact['created_at']); ?>
+                            </td>
+                        </tr>
 
-    <div class="admin-border">
-        <div class="big-title-admin">
-            <h2>Utilisateurs</h2>
-        </div>
+                    <?php endforeach; ?>
 
-        <table>
-            <thead>
-                <tr class="title-admin">
-                    <th>Id</th>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Rôle</th>
-                    <th>Suppression</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php foreach ($users as $user) : ?>
-                    <tr>
-                        <td>
-                            <?= htmlspecialchars($user['id']); ?>
-                        </td>
-                        <td>
-                            <?= htmlspecialchars($user['firstname']); ?>
-                        </td>
-                        <td>
-                            <?= htmlspecialchars($user['lastname']); ?>
-                        </td>
-                        <td>
-                            <?= htmlspecialchars($user['mail']); ?>
-                        </td>
-                        <td>
-                            <?= htmlspecialchars($user['isAdmin']); ?>
-                        </td>
-                        <td>
-                            <a href="delete-user.php?id=<?=intval($user['id']); ?>"class="btn-delete">Supprimer</a>
-                        </td>
+                    <!-- Nous affichons le reste de nos messages -->
+                    <tr id="slide">
+                        <!-- <div id="slide"></div> -->
                     </tr>
-                <?php endforeach; ?>        
-            </tbody>
-        </table>
-    </div>
 
-    <div class="admin-border">
-        <div class="big-title-admin">
-            <h2>Animaux</h2>
+                </tbody>
+
+            </table>
+
+
+            <button id="next" class="">afficher plus de messages</button>
         </div>
+
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Utilisateurs</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr class="title-admin">
+                        <th>Id</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th>Suppression</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($users as $user) : ?>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($user['id']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($user['firstname']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($user['lastname']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($user['mail']); ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($user['isAdmin']); ?>
+                            </td>
+                            <td>
+                                <a href="delete-user.php?id=<?= intval($user['id']); ?>" class="btn-delete">Supprimer</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Animaux</h2>
+            </div>
             <h3 class="title-admin">Total : <?= $countAnimals ?> animaux</h3>
-    </div>
-
-    <div class="admin-border">
-        <div class="big-title-admin">
-            <h2>Espèces & Races</h2>
         </div>
 
-        <table>
-            <thead>
-                <tr class="title-admin">
-                    <th>Total d'espèces :</th>
-                    <th>Total de races :</th>
-                </tr>
-            </thead>    
+        <div class="admin-border">
+            <div class="big-title-admin">
+                <h2>Espèces & Races</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr class="title-admin">
+                        <th>Total d'espèces :</th>
+                        <th>Total de races :</th>
+                    </tr>
+                </thead>
                 <tr>
                     <td><?= $countSpecies ?></td>
                     <td><?= $countRaces ?></td>
                 </tr>
-        </table>   
+            </table>
 
-        <table>
-            <thead>
-                <tr class="title-admin">
-                    <th>Suppression d'une espèce</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php foreach ($species as $specie) : ?>
-                    <tr>
-                        <td>
-                            <?= htmlspecialchars($specie['name']); ?>
-                        </td>
-                        <td>
-                            <a href="delete-specie.php?id=<?=intval($specie['id']); ?>"class="btn-delete">Supprimer</a>
-                        </td>
+            <table>
+                <thead>
+                    <tr class="title-admin">
+                        <th>Suppression d'une espèce</th>
                     </tr>
-                <?php endforeach; ?>  
-            </tbody>
-        </table>    
+                </thead>
 
-        <table>
-            <thead>
-                <tr>
-                    <th class="title-admin">Suppression d'une race</th>
-                </tr>
-            </thead>
+                <tbody>
+                    <?php foreach ($species as $specie) : ?>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($specie['name']); ?>
+                            </td>
+                            <td>
+                                <a href="delete-specie.php?id=<?= intval($specie['id']); ?>" class="btn-delete">Supprimer</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
 
-            <tbody>
-                <?php foreach ($races as $element) : ?>
+            <table>
+                <thead>
                     <tr>
-                        <td>
-                            <?= htmlspecialchars($element['race']); ?>
-                        </td>
-                        <td>
-                            <a href="delete-race.php?id=<?=intval($element['id']); ?>"class="btn-delete">Supprimer</a>
-                        </td>
+                        <th class="title-admin">Suppression d'une race</th>
                     </tr>
-                <?php endforeach; ?>  
-            </tbody>
-        </table>        
-    </div> 
-    
+                </thead>
+
+                <tbody>
+                    <?php foreach ($races as $element) : ?>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($element['race']); ?>
+                            </td>
+                            <td>
+                                <a href="delete-race.php?id=<?= intval($element['id']); ?>" class="btn-delete">Supprimer</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
         <div class="admin-border">
             <div class="big-title-admin">
                 <h2>Ajout d'une espèce</h2>
             </div>
-            <?php foreach($species as $element):?>
+            <?php foreach ($species as $element) : ?>
                 <div>
                     <?= htmlspecialchars($element['name']); ?>
                 </div>
-                <?php endforeach ?>
+            <?php endforeach ?>
 
-                <form method="POST" action="dashboard.php">
+            <form method="POST" action="dashboard.php">
                 <label for="name">
                     <span>Ajouter une espèce</span>
                     <input type="text" name="name" id="name" value="" />
                 </label>
                 <input type="submit" value="ajouter" name="specieData">
             </form>
-        </div>  
-        
+        </div>
+
         <div class="admin-border">
             <div class="big-title-admin">
                 <h2>Ajout d'une race</h2>
             </div>
-            <?php foreach($races as $element):?>
+            <?php foreach ($races as $element) : ?>
                 <div>
                     <?= htmlspecialchars($element['race']); ?>
                 </div>
-                <?php endforeach ?>
+            <?php endforeach ?>
 
-                <form action="dashboard.php" method="post">
+            <form action="dashboard.php" method="post">
                 <label for="race">
                     <span>Ajouter une race</span>
                     <input type="text" name="race" id="race" />
                 </label>
                 <input type="submit" value="send" name="raceData">
             </form>
-        </div> 
+        </div>
 
 
 
 
 
-            
-
-    
-
-</div>
-    <?php elseif (Session::isConnected()&& !$_SESSION['auth']['role']) : ?>
-        <?=$_SESSION['error'] = 'Restricted'; ?>
-<?php endif ; ?>
 
 
 
+
+    </div>
+<?php elseif (Session::isConnected() && !$_SESSION['auth']['role']) : ?>
+    <?= $_SESSION['error'] = 'Restricted'; ?>
+<?php endif; ?>

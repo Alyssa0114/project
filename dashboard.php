@@ -32,7 +32,7 @@ $users = $userModel->findAll();
 
 $contactModel = new Contact;
 $counts = $contactModel->countAll();
-$contacts = $contactModel->findAll();
+$contacts = $contactModel->getTEST();
 
 $specieModel = new Specie;
 $countSpecies = $specieModel->countAll();
@@ -77,4 +77,4 @@ if (isset($_POST['specieData'])) {
 // commentaire
 
 // Rendu de la vue
-render(__DIR__."/views/$pagePath", compact('pageTitle', 'users', 'counts', 'countSpecies', 'species', 'date', 'countPosts', 'countRaces', 'countAnimals', 'animals', 'races','posts','contacts'));
+render(__DIR__ . "/views/$pagePath", compact('pageTitle', 'users', 'counts', 'countSpecies', 'species', 'date', 'countPosts', 'countRaces', 'countAnimals', 'animals', 'races', 'posts', 'contacts'));

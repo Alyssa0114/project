@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -6,31 +6,33 @@ declare(strict_types=1);
 //class Model
 //Elle nous permet d'établir la connexion en PDO
 
-abstract class Model {
+abstract class Model
+{
     protected $database;
     protected string $table;
-    
+
     //Connexion à notre base de données 
-    public function __construct() {
+    public function __construct()
+    {
         try {
             $this->database = new PDO(
                 'mysql:host=localhost;dbname=animals_project;charset=UTF8',
                 'root',
                 '',
-                    [
-                      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                    ]
-                );
-        } catch(PDOException $e) {
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                ]
+            );
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
-    
+
     //Introduction des comportements obligatoire
     abstract public function insert(array $params);
-    
-     // Méthode delete.
+
+    // Méthode delete.
     public function delete(int $id): void
     {
         try {
@@ -78,14 +80,15 @@ abstract class Model {
     }
 
     // Méthode countAll, afficher le nombre total de messages/utilisateurs/animaux/etc...
-    public function countAll():int {
+    public function countAll(): int
+    {
         try {
             $find = $this->database->prepare(
                 "SELECT COUNT(id) AS count 
                 FROM {$this->table}"
             );
             $find->execute();
-            $result = $find->fetch(); 
+            $result = $find->fetch();
         } catch (PDOException $e) {
             echo $e->getMessage();
             exit;
@@ -93,14 +96,15 @@ abstract class Model {
         return (int) $result['count'];
     }
     //Méthode pour rechercher par noms
-    public function findByName(string $name) {
-        try{
+    public function findByName(string $name)
+    {
+        try {
             $find = $this->database->prepare(
                 "SELECT name FROM {$this->table} WHERE name = :name"
-                );
-                $find->execute([':name' => $name]);
-                $result = $find->fetch();
-        }catch (PDOException $e) {
+            );
+            $find->execute([':name' => $name]);
+            $result = $find->fetch();
+        } catch (PDOException $e) {
             echo $e->getMessage();
             exit;
         }
@@ -108,7 +112,8 @@ abstract class Model {
     }
 
     //Afficher nos messages par ordre chronologique
-    public function getMSG() {
+    public function getMSG()
+    {
         try {
             $find = $this->database->prepare(
                 "SELECT * FROM {$this->table} ORDER BY created_at DESC"
@@ -121,7 +126,4 @@ abstract class Model {
         }
         return $result;
     }
-    
 }
-
-

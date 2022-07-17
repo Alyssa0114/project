@@ -385,7 +385,6 @@ option::hover {
 }
 
 form {
-    width: 50%;
     min-width: 380px;
     max-width: 600px;
     background: white;
