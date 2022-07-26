@@ -17,7 +17,7 @@ $getNext = $getNext->getTEST($_GET['nb'], 3);
 
 foreach ($getNext as $contact) :
 ?>
-
+<tr>
     <td>
         <?= htmlspecialchars($contact['id']); ?>
     </td>
@@ -39,6 +39,7 @@ foreach ($getNext as $contact) :
     <td>
         <?= htmlspecialchars($contact['created_at']); ?>
     </td>
+</tr>
 <?php
 endforeach;
 ?>

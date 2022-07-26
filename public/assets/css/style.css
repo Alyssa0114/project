@@ -532,6 +532,14 @@ label > a {
     border-radius: 75px;
 }
 
+button {
+    font-size: 25px;
+    color:black;
+    padding: 10px;
+    background: linear-gradient(65deg, #fea347, #df6d14);
+    border-radius: 75px;
+
+}
 
 /**********************FOOTER****************************/
 footer {
