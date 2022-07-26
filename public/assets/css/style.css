@@ -179,6 +179,13 @@ menu:after {
     margin-top: 5px;
 }
 
+.title-content {
+    text-align: left;
+    margin-left: 20px;
+    color:#df6d14;
+    font-size: 35px;
+}
+
 .title-animals {
     text-align: center;
     background-color: #df6d14;
@@ -186,9 +193,9 @@ menu:after {
 }
 
 .title-articles {
-    text-align: center;
+    text-align: left;
     color:black;
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 0.6rem;
     font-family: 'Finlandica', sans-serif;
 }
@@ -433,7 +440,7 @@ option::hover {
 }
 
 form {
-    min-width: 380px;
+    min-width: 400px;
     max-width: 600px;
     background: white;
     padding: 60px 45px 30px;
@@ -452,6 +459,13 @@ form::after {
     transform: translateX(-50%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+}
+
+.form_center {
+    align-items: center;
+    vertical-align: middle;
+    width: 50vw; 
+    margin-left : 25vw;    
 }
 
 .add-animal-form {
@@ -508,7 +522,15 @@ label {
     padding-right: 15px;
 }
 
-
+label > a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 12px auto 0;
+    font-size: 25px;
+    background: linear-gradient(65deg, #ff3b3b, #f00a0a);
+    color:black;
+    border-radius: 75px;
+}
 
 
 /**********************FOOTER****************************/
@@ -535,6 +557,7 @@ footer {
 .footer-content h3 {
     font-size: 2.1rem;
     font-weight: 500;
+    color:#b96312;
     text-transform: capitalize;
     line-height: 3rem;
 }

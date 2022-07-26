@@ -1,23 +1,28 @@
 
+<div class="form_center">
+    <form action="contact.php" method="post">
+        <fieldset>
+                <h2>Envoyez nous un message</h2>
 
-<form action="contact.php" method="post">
-    <h2>Envoyez nous un message</h2>
+                    <label for="name">Nom / Prénom</label>
+                    <input id="name" type="text" name="name" placeholder="Votre nom" required>
 
-        <label for="name">Nom / Prénom</label>
-        <input id="name" type="text" name="name" placeholder="Votre nom" required>
+                    <label for="name">Votre adresse e-mail</label>
+                    <input id="mail" type="text" name="mail" placeholder="Votre adresse email" required>
 
-        <label for="name">Votre adresse e-mail</label>
-        <input id="mail" type="text" name="mail" placeholder="Votre adresse email" required>
+                    <label for="name">Votre numéro de téléphone</label>
+                    <input id="phone" type="text" name="phone" placeholder="Votre numéro de téléphone" required>
 
-        <label for="name">Votre numéro de téléphone</label>
-        <input id="phone" type="text" name="phone" placeholder="Votre numéro de téléphone" required>
+                    <label for="name">Le sujet de votre message</label>
+                    <input id="subject" type="text" name="subject" placeholder="Votre demande" required>
+                    
+                    <label for="name">Veuillez saisir votre message</label>
+                    <textarea id="content" name="content" placeholder="Votre message" required></textarea>
 
-        <label for="name">Le sujet de votre message</label>
-        <input id="subject" type="text" name="subject" placeholder="Votre demande" required>
-        
-        <label for="name">Veuillez saisir votre message</label>
-        <textarea id="content" name="content" placeholder="Votre message" required></textarea>
-
-        <input type="submit" data-submit="...en cours d'envoi" value="Envoyer">
-
-</form>
+                    <input type="submit" data-submit="...en cours d'envoi" value="Envoyer">
+                    <label>
+                            <a href="index.php">Annuler</a>
+                    </label>
+        </fieldset>
+    </form>
+</div>    

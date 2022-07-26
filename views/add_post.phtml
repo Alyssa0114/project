@@ -1,24 +1,26 @@
 <?php if(Session::isConnected() && $_SESSION['auth']['role']) : ?>
-    <h2>Ajouter un article</h2>
-        <form method="post" action="add_post.php">
-            <fieldset>
-                <legend>Nouvel article</legend>
-                <label for="title">Titre
-                    <input type="text" name="title" id="title" value=""/>
-                </label>
+    <h2 class="title-content">Ajouter un article</h2>
+        <div class="form_center">
+            <form method="post" action="add_post.php">
+                <fieldset>
+                    <legend>Nouvel article</legend>
+                    <label for="title">Titre
+                        <input type="text" name="title" id="title" value=""/>
+                    </label>
 
-            </fieldset>
-            <fieldset>
-                <legend>Contenu</legend>
-                <label for="content">Message
-                    <textarea name="content" id="content" class="textarea-field" required></textarea>
-                </label>    
-                
-                    <label><input type="submit" value="Envoyer"></label>
-                
-                <label>
-                    <a href="dashboard.php">Annuler</a>
-                </label>
-            </fieldset>
-        </form>
+                </fieldset>
+                <fieldset>
+                    <legend>Contenu</legend>
+                    <label for="content">Message
+                        <textarea name="content" id="content" class="textarea-field" required></textarea>
+                    </label>    
+                    
+                        <label><input type="submit" value="Envoyer"></label>
+                    
+                    <label>
+                        <a href="dashboard.php">Annuler</a>
+                    </label>
+                </fieldset>
+            </form>
+        </div>
 <?php endif; ?>        

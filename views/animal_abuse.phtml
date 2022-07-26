@@ -1,36 +1,40 @@
 
 
+<div class="form_center">
 
-<form action="animal_abuse.php" method="post">
-    <h2>Déclarer une maltraitance</h2>
-    
-        <label for="firstname">Votre prénom</label>
-        <input id="firstname" type="text" name="firstname" placeholder="Votre prénom" required>
+        <form action="animal_abuse.php" method="post">
+            <fieldset>
+                <h2>Déclarer une maltraitance</h2>
+                
+                <label for="firstname">Votre prénom</label>
+                <input id="firstname" type="text" name="firstname" placeholder="Votre prénom" required>
 
-        <label for="lastname">Votre nom</label>
-        <input id="lastname" type="text" name="lastname" placeholder="Votre nom" required>
+                <label for="lastname">Votre nom</label>
+                <input id="lastname" type="text" name="lastname" placeholder="Votre nom" required>
 
-        <label for="mail">Votre adresse e-mail</label>
-        <input id="mail" type="text" name="mail" placeholder="Votre adresse email" required>
+                <label for="mail">Votre adresse e-mail</label>
+                <input id="mail" type="text" name="mail" placeholder="Votre adresse email" required>
 
-        <label for="address_zipcode_city">Votre adresse, code postal et ville</label>
-        <input id="address_zipcode_city" type="text" name="address_zipcode_city" placeholder="Votre adresse email" required>
-        
-        <label for="name">Votre numéro de téléphone</label>
-        <input id="phone" type="text" name="phone" placeholder="Votre numéro de téléphone" required>
+                <label for="address_zipcode_city">Votre adresse, code postal et ville</label>
+                <input id="address_zipcode_city" type="text" name="address_zipcode_city" placeholder="Votre adresse email" required>
+                
+                <label for="name">Votre numéro de téléphone</label>
+                <input id="phone" type="text" name="phone" placeholder="Votre numéro de téléphone" required>
 
-        <label for="accused_name">Prénom et nom du mis en cause</label>
-        <input id="accused_name" type="text" name="accused_name" placeholder="Prénom et nom du mis en cause" required>
+                <label for="accused_name">Prénom et nom du mis en cause</label>
+                <input id="accused_name" type="text" name="accused_name" placeholder="Prénom et nom du mis en cause" required>
 
-        <label for="accused_address">L'adresse du mis en cause</label>
-        <input id="accused_address" type="text" name="accused_address" placeholder="L'adresse du mis en cause" required>
+                <label for="accused_address">L'adresse du mis en cause</label>
+                <input id="accused_address" type="text" name="accused_address" placeholder="L'adresse du mis en cause" required>
 
-        <label for="accused_relationship">Votre relation avec le mis en cause</label>
-        <input id="accused_relationship" type="text" name="accused_relationship" placeholder="Votre relation avec le mis en cause" required>
+                <label for="accused_relationship">Votre relation avec le mis en cause</label>
+                <input id="accused_relationship" type="text" name="accused_relationship" placeholder="Votre relation avec le mis en cause" required>
 
-        <label for="animal_situation">Veuillez nous indiquer l'état des animaux ainsi que la description des faits</label>
-        <textarea id="animal_situation" name="animal_situation" placeholder="Veuillez nous indiquer l'état des animaux ainsi que la description des faits" required></textarea>
+                <label for="animal_situation">Veuillez nous indiquer l'état des animaux ainsi que la description des faits</label>
+                <textarea id="animal_situation" name="animal_situation" placeholder="Veuillez nous indiquer l'état des animaux ainsi que la description des faits" required></textarea>
 
-        <input type="submit" data-submit="...en cours d'envoi" value="Envoyer">
+                <input type="submit" data-submit="...en cours d'envoi" value="Envoyer">
+            </fieldset>
+        </form>
 
-</form>
+</div>    

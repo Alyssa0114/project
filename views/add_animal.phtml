@@ -1,62 +1,67 @@
 <?php if(Session::isConnected() && $_SESSION['auth']['role']) : ?>
 
-    <h2>Ajouter un animal</h2>
-        <form enctype="multipart/form-data" action="add_animal.php" method="post">
+    <h2 class="title-content">Ajouter un animal</h2>
+        <div class="form_center">
+            <form enctype="multipart/form-data" action="add_animal.php" method="post">
 
-        
-            <fieldset>
-                <div class="add-animal-form">
-                    <label for ="image">Ajoutez des photos</label>
-                    <input type="file" id="image" name="files[]" multiple>
-                </div>
-                    
-                <div class="add-animal-form">
-                    <label for="name">Nom</label>
-                    <input id="name" type="text" name="name" placeholder="Nom de l'animal" required>
-                </div>
-                <div class="add-animal-form">
-                    <label for="date_of_birth">Date de naissance</label>
-                    <input id="date_of_birth" type="date" name="date_of_birth" value="" min="1980-01-01" max="2050-12-31" required>
-                </div>
-                <div class="add-animal-form">
-                    <label for="sex">Sexe de l'animal</label>
-                    <select name="sex" id="sex">
-                        <option value="">--Selectionnez--</option>
-                        <option value="male">Mâle</option>
-                        <option value="femelle">Femelle</option>
-                    </select>
-                </div>
-                <div class="add-animal-form">
-                    <label for="refuge">Refuge actuel de l'animal</label>
-                    <input id="refuge" type="text" name="refuge" placeholder="Entrez le refuge actuel de l'animal" required>
-                </div>
-                <div class="add-animal-form">
-                    <label for="specie_id">Sélectionnez l'espèce</label>
-                    <select name="specie_id" id="specie_id">
-                        <option value="">--Selectionnez une espèce--</option>
-                        <?php foreach ($species as $specie) : ?>
-                            <option value="<?=$specie['id']?>"> <?=$specie['name'] ?></option>
-                            <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="add-animal-form">
-                    <label for="race_id">Sélectionnez la race</label>
-                    <select name="race_id" id="race_id">
-                        <option value="">--Selectionnez une race--</option>
-                        <?php foreach ($races as $race) : ?>
-                            <option value="<?=$race['id']?>"> <?=$race['race'] ?></option>
-                            <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="add-animal-form">
-                    <label for="animal_code_id">Indiquez le numéro de vérification de la puce</label>
-                    <input type="text" id="animal_code_id" name="animal_code_id" placeholder="Indiquez le numéro de vérification de la puce" required>
-                </div>
-
-                    <input type="submit" data-submit="...en cours d'envoi" value="Envoyer">
-            </fieldset>                    
             
-        </form>
+                <fieldset>
+                    <legend>Nouvelle fiche animal</legend>
+                    <div class="add-animal-form">
+                        <label for ="image">Ajoutez des photos</label>
+                        <input type="file" id="image" name="files[]" multiple>
+                    </div>
+                        
+                    <div class="add-animal-form">
+                        <label for="name">Nom</label>
+                        <input id="name" type="text" name="name" placeholder="Nom de l'animal" required>
+                    </div>
+                    <div class="add-animal-form">
+                        <label for="date_of_birth">Date de naissance</label>
+                        <input id="date_of_birth" type="date" name="date_of_birth" value="" min="1980-01-01" max="2050-12-31" required>
+                    </div>
+                    <div class="add-animal-form">
+                        <label for="sex">Sexe de l'animal</label>
+                        <select name="sex" id="sex">
+                            <option value="">--Selectionnez--</option>
+                            <option value="male">Mâle</option>
+                            <option value="femelle">Femelle</option>
+                        </select>
+                    </div>
+                    <div class="add-animal-form">
+                        <label for="refuge">Refuge actuel de l'animal</label>
+                        <input id="refuge" type="text" name="refuge" placeholder="Entrez le refuge actuel de l'animal" required>
+                    </div>
+                    <div class="add-animal-form">
+                        <label for="specie_id">Sélectionnez l'espèce</label>
+                        <select name="specie_id" id="specie_id">
+                            <option value="">--Selectionnez une espèce--</option>
+                            <?php foreach ($species as $specie) : ?>
+                                <option value="<?=$specie['id']?>"> <?=$specie['name'] ?></option>
+                                <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="add-animal-form">
+                        <label for="race_id">Sélectionnez la race</label>
+                        <select name="race_id" id="race_id">
+                            <option value="">--Selectionnez une race--</option>
+                            <?php foreach ($races as $race) : ?>
+                                <option value="<?=$race['id']?>"> <?=$race['race'] ?></option>
+                                <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="add-animal-form">
+                        <label for="animal_code_id">Indiquez le numéro de vérification de la puce</label>
+                        <input type="text" id="animal_code_id" name="animal_code_id" placeholder="Indiquez le numéro de vérification de la puce" required>
+                    </div>
 
+                        <input type="submit" data-submit="...en cours d'envoi" value="Envoyer">
+                        <label>
+                        <a href="dashboard.php">Annuler</a>
+                    </label>
+                </fieldset>                    
+                
+            </form>
+        </div>
 
 <?php endif ?>    
