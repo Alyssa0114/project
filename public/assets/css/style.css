@@ -185,6 +185,14 @@ menu:after {
     border-radius: 0.6rem;
 }
 
+.title-articles {
+    text-align: center;
+    color:black;
+    font-size: 20px;
+    border-radius: 0.6rem;
+    font-family: 'Finlandica', sans-serif;
+}
+
 .content-animals {
     text-align: center;
     color: black;
@@ -200,6 +208,23 @@ menu:after {
     margin-right: 5px;
 }
 
+.container-grid-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+.important {
+    font-size: 25px;
+    color:red;
+    text-decoration: none;
+}
+
 /**** BANNER IMG ****/
 .banner_image {
     width: 100%;
@@ -210,29 +235,39 @@ menu:after {
 .banner_image img {
     width: 100%;
     object-fit: cover;
-    border: 3px solid black;
+    border: 3px solid #df6d14;;
 
 }
 
-.banner_content {
+.banner_content_animals {
     position: absolute;
     margin-top: -35%;
     margin-left: 4%;
 }
 
-.banner_content h1 {
+.banner_content_animals h1 {
     color: #111;
     font-size: 50px;
 }
 
-.banner_content p {
+.banner_content_animals p {
     text-align: center;
 }
 
-.banner_content p>a {
+.banner_content_animals p>a {
     text-decoration: none;
     color: #b96312;
 }
+
+.banner_content_articles {
+    position: absolute;
+    margin-top: -35%;
+    margin-left: 4%;
+}
+
+
+
+
 
 
 /**** PAGE : ADMIN PANEL ****/
@@ -262,6 +297,19 @@ menu:after {
     gap: 100px;
     border-radius: 5px;
 
+}
+
+.flex-container-admin {
+
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 1.5rem;
+    gap: 100px;
+    border-radius: 5px;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
 }
 
 .flex-container-scroll {

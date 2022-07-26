@@ -1,7 +1,7 @@
 <?php if (Session::isConnected() && $_SESSION['auth']['role']) :; ?>
 
 
-    <div class="container-grid">
+    <div class="flex-container-admin">
         <div class="admin-border">
             <div class="big-title-admin">
                 <h2>Articles</h2>
@@ -174,7 +174,8 @@
             <table>
                 <thead>
                     <tr class="title-admin">
-                        <th>Suppression d'une espèce</th>
+                        <th>Différentes espèces</th>
+                        <th>Suppression</th>
                     </tr>
                 </thead>
 
@@ -195,7 +196,8 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="title-admin">Suppression d'une race</th>
+                        <th class="title-admin">Différentes races</th>
+                        <th class="title-admin">Suppression</th>
                     </tr>
                 </thead>
 
@@ -248,7 +250,7 @@
                     <span>Ajouter une race</span>
                     <input type="text" name="race" id="race" />
                 </label>
-                <input type="submit" value="send" name="raceData">
+                <input type="submit" value="ajouter" name="raceData">
             </form>
         </div>
 

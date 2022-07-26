@@ -1,6 +1,6 @@
 <div class="banner_image">
     <img class="banner_img_dog" src="./public/assets/images/dobermann_test2.jpg" alt="dobermann">
-    <div class="banner_content">
+    <div class="banner_content_animals">
         <h1>Nos Amis Les Animaux</h1>
         <h2>Aucune raison ne justifie l'abandon</h2>
         <p>Découvrez le film de sensibilisation de la Société Protectrice des Animaux <a href="https://lp.la-spa.fr/stopabandon/?reserved_code_media=W22PG012F&utm_medium=mainbloc&utm_campaign=Abandon22&utm_source=site" target="blank">juste ici</a></p>
@@ -32,5 +32,40 @@
             </article>
         <?php endforeach ?>
     </div>
+</section>
+</div>
+
+<div>
+    <h2>Si vous êtes intéressé(s) par l'un de nos animaux, contactez nous <a href="contact.php" class="important" target="blank">juste ici</a></h2>
+    <h3 class="important">Attention ! Une adoption est une démarche à ne pas prendre à la légère !</h3>
+</div>
+
+
+<div class="banner_image">
+    <img class="banner_img_dog" src="./public/assets/images/berger_australien_duo.jpg" alt="berger australien">
+    <div class="banner_content_articles">
+        <h2 class="title-articles">Nos Articles concernant <span>Nos Amis Les Animaux</span></h2>
+        <h3 class="title-articles">Suivez l'actualité</h3>
+        <p class="title-articles">Saviez-vous que chaques années la SPA recueille plus de 45 000 animaux dont une grande partie ont été abandonnés.<a href="https://www.la-spa.fr/missions/les-actions-de-la-spa/defendre-les-animaux/lutter-contre-labandon/" target="blank" class="important">Lutter contre l'abandon, renseignez-vous ici</a></p>
+    </div>
+</div>
+
+<section>
+    <h2>Nous avons <?= $countPosts ?> articles à lire pour vous !</h2>
+        <div class="container-grid-articles">
+            <?php foreach ($posts as $post) : ?>
+                <article>
+                    <div>
+                        <h3 class="title-animals"><?= htmlspecialchars($post['created_at']); ?></h3>
+                    </div>
+                    <div>
+                        <p class="content-animals">Titre : <?= htmlspecialchars($post['title']); ?></p>
+                    </div>
+                    <div>
+                        <p class="content-animals">Contenu : <?= htmlspecialchars($post['content']); ?></p>
+                    </div>
+                </article>
+            <?php endforeach ?>
+        </div>
 </section>
 </div>
